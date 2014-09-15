@@ -4396,7 +4396,7 @@ AWS.EventListeners = {
       }
 
       var timeDiff = (AWS.util.date.getDate() - this.signedAt) / 1000;
-      if (timeDiff >= 60 * 5) { // if we signed 5min ago, re-sign
+      if (timeDiff >= 60 * 4) { // if we signed 4min ago, re-sign
         this.emit('sign', [this], function(err) {
           if (err) done(err);
           else executeSend();
